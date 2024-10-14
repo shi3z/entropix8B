@@ -24,8 +24,6 @@ load weights
 >9.11 and 9.9 which is larger?
 9.11 and 9.9 which is larger?
 generatong
- /mnt/raid6/git/entropix/entropix/torch_sampler.py:58: UserWarning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at /opt/conda/conda-bld/pytorch_1724789121465/work/aten/src/ATen/native/ReduceOps.cpp:1808.)
-  attn_varentropy = torch.var(attn_entropy, dim=-1)
 9.11 or 9.9?
 ## Step 1: Compare the two numbers.
 To compare the two numbers, we need to understand that 9.11 is the same as 9 and 11 hundredths, and 9.9 is the same as 9 and 9 tenths.
