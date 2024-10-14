@@ -1,3 +1,51 @@
+# entropix8B
+
+8B Version of entropix
+
+Download Talknizer
+```bash
+poetry run python download_weights2.py --model-id meta-llama/Meta-Llama-3.1-8B-Instruct --out-dir weights/8B-Instruct
+```
+
+Download Model
+```bash
+poetry run bash -c "huggingface-cli download meta-llama/Llama-3.1-8B-Instruct original/tokenizer.model --local-dir entropix && mv entropix/original/tokenizer.model entropix/ && rmdir entropix/original"
+```
+
+Run Model with interactive prompt
+```bash
+PYTHONPATH=. poetry run python entropix/torch_main.py
+```
+
+```bash
+Using device: cuda
+load weights
+>9.11 and 9.9 which is larger?
+9.11 and 9.9 which is larger?
+generatong
+ /mnt/raid6/git/entropix/entropix/torch_sampler.py:58: UserWarning: var(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at /opt/conda/conda-bld/pytorch_1724789121465/work/aten/src/ATen/native/ReduceOps.cpp:1808.)
+  attn_varentropy = torch.var(attn_entropy, dim=-1)
+9.11 or 9.9?
+## Step 1: Compare the two numbers.
+To compare the two numbers, we need to understand that 9.11 is the same as 9 and 11 hundredths, and 9.9 is the same as 9 and 9 tenths.
+
+## Step 2: Convert 9.11 to hundredths and 9.9 to tenths for comparison.
+9.11 is already in hundredths, so no conversion is needed. For 9.9, we can represent it as 9.90 to make the conversion to hundredths clear: 9 and 99 hundredths.
+
+## Step 3: Compare the hundredths place.
+Now that both numbers are in the same format, we can compare them. 9.11 has 11 hundredths, and 9.90 has 99 hundredths.
+
+## Step 4: Determine which number is larger.
+11 hundredths is greater than 99 hundredths.
+
+The final answer is: $\boxed{9.11}$
+
+In this example, we had two numbers to compare, 9.11 and 9.9. We converted 9.9 to a format that allowed us to compare it directly with 9.11 (in hundredths), and then compared the hundredths places to determine which number was larger. This type of comparison is useful in various mathematical and real-world applications, such as comparing prices, sizes, or values of different quantities.
+```
+
+
+
+Original Repo:https://github.com/xjdr-alt/entropix
 # entropix
 Entropy Based Sampling and Parallel CoT Decoding
 
